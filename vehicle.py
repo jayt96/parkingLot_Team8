@@ -27,11 +27,6 @@ class Vehicle(ABC):
     def update_parking_status(self, parking_charge):
         self.exit_time = datetime.utcnow()
         self.parking_cost = parking_charge
-        print("Creating payment transaction...")
-        print("1...\n")
-        print("2...\n")
-        print("3...\n")
-        print("Payment has been completed")
         self.ticket_status = ParkingTicketStatus.PAID
 
     @abstractmethod
