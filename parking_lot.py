@@ -19,6 +19,7 @@ class ParkingLot:
         self.max_handicapped_count = enums.HANDICAPPED_COUNT
         self.cnt = 0
         self.floor_count = 0
+
         self.active_tickets = {}
         self.parking_history = {}
 
@@ -26,6 +27,7 @@ class ParkingLot:
         self.max_compact_count = enums.COMPACT_COUNT * self.floor_count
         self.max_large_count = enums.LARGE_COUNT * self.floor_count
         self.max_motorbike_count = enums.MOTORBIKE_COUNT * self.floor_count
+        self.max_handicapped_count = enums.HANDICAPPED_COUNT * self.floor_count
 
     def __getattr__(self, name):
         return getattr(self.instance, name)
