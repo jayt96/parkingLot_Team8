@@ -17,7 +17,6 @@ class Payment:
             if payment_input > amount:
                 print("Payment successful. Charge: {:.2f}".format(payment_input - amount))
                 account.account_status = AccountStatus.SUBSCRIBED
-                account.account_status = AccountStatus.BLOCKED
                 conn = sqlite3.connect("AccountDB.db")
                 cursor = conn.cursor()
                 cursor.execute("UPDATE accounts SET account_status = ? WHERE login = ?",
@@ -26,7 +25,6 @@ class Payment:
             elif payment_input == amount:
                 print("Payment successful. No charge.")
                 account.account_status = AccountStatus.SUBSCRIBED
-                account.account_status = AccountStatus.BLOCKED
                 conn = sqlite3.connect("AccountDB.db")
                 cursor = conn.cursor()
                 cursor.execute("UPDATE accounts SET accountType = ? WHERE login = ?",
