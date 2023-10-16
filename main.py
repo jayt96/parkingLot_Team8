@@ -54,7 +54,7 @@ while True:
                         print("Floor '" + floor_name + "' was added successfully")
                         continue
                     elif admin_choice == 3:
-                        new_name = input("Enter the new name of the existing parking lot")
+                        new_name = input("Enter the new name of the existing parking lot: ")
                         Admin.set_lot_name(parking_lot, new_name)
                         print("The parking lot was renamed to", new_name)
                         continue
@@ -135,6 +135,11 @@ while True:
                         else:
                             vehicle_number, parking_cost = parking_lot.leave_parking(ticket_number)
                             print(f"Vehicle Number: {vehicle_number}. Parking cost: {parking_cost}.")
+                            print("Creating payment transaction...")
+                            print("1...\n")
+                            print("2...\n")
+                            print("3...\n")
+                            print("Payment has been completed")
                             continue
                     elif choice == 3:
                         parking_status = parking_lot.get_empty_spot_number()
