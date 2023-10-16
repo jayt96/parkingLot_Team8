@@ -1,6 +1,6 @@
 import sqlite3
 
-from Payment import Payment
+from payment import Payment
 from account import Admin, Account
 from enums import AccountStatus
 from parking_lot import ParkingLot
@@ -97,13 +97,15 @@ while True:
                                              "1 Car.\n"
                                              "2 Motorcycle, \n"
                                              "3 Truck.\n"
-                                             "4 Van\n")
+                                             "4 Van\n"
+                                             "5 Handicapped\n"
+                                             "Your choice: ")
                         try:
                             vehicle_type = int(vehicle_type)
                         except ValueError:
                             print('Invalid vehicle type.')
                         else:
-                            if vehicle_type < 0 or vehicle_type > 4:
+                            if vehicle_type < 0 or vehicle_type > 5:
                                 print('Invalid vehicle type.')
                             else:
                                 vehicle_number = input("Enter vehicle Number: ")
@@ -156,9 +158,11 @@ while True:
                         print("The payment will cost you around 50,000 KRW. Do you want to buy it?")
                         print("Type [Y] for Yes and [N] for No: ")
                         user_input = input()
-                        if user_input == 'Y':
+                        if user_input.lower() == 'y':
                             amount_to_pay = 50000
                             Payment.make_payment(amount_to_pay, user)
+                        else:
+                            continue
                     elif choice == 6:
                         break
                     else:
