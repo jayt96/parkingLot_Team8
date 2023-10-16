@@ -1,4 +1,3 @@
-import json
 import time
 
 import enums
@@ -135,6 +134,12 @@ class ParkingLot:
             message += f"Free Motorbike: {self.max_motorbike_count - self.motorbike_spot_count}"
         else:
             message += "Motorbike is full"
+        message += "\n"
+
+        if self.max_handicapped_count - self.handicapped_spot_count > 0:
+            message += f"Free Handicapped: {self.max_handicapped_count - self.handicapped_spot_count}"
+        else:
+            message += "Handicapped is full"
         message += "\n"
 
         return message
