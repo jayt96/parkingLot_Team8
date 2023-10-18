@@ -9,7 +9,6 @@ sql.execute("""CREATE TABLE IF NOT EXISTS accounts(
     login TEXT,
     password TEXT,
     email TEXT,
-    phone TEXT,
     accountType INTEGER
     )""")
 
