@@ -5,12 +5,9 @@ from account import Admin, Account
 from enums import AccountStatus
 from parking_lot import ParkingLot
 from vehicle import Car, Truck, Motorcycle, Van, Handicapped
-
 parking_lot = None
-
 while True:
     admin_choice = 0
-
     choice = input("Enter login choice.\n"
                    "1 Sign in as admin. \n"
                    "2 Sign in as user. \n"
@@ -28,7 +25,6 @@ while True:
             admin_password = input("Enter admin password: ")
             admin = Admin(admin_username, admin_password)
             admin.login()
-
             while True:
                 admin_choice = input("Admin Menu:\n"
                                      "1 Add Parking Lot\n"
@@ -69,7 +65,6 @@ while True:
                         continue
             if admin_choice == 5:
                 continue
-
         elif choice == 2:
             if parking_lot is None:
                 print('Parking lot has not been created yet. Wait until admin will add it')
@@ -175,7 +170,6 @@ while True:
                         continue
                 if choice == 6:
                     continue
-
         elif choice == 3:
             new_user_name = input("Enter a new username: ")
             new_password = input("Enter a new password: ")
@@ -192,7 +186,6 @@ while True:
             print(f"New user account created with username: {new_user_name}")
             print("Please sign in again")
             continue
-
         elif choice == 4:
             exit()
         else:
