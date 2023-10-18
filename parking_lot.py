@@ -35,17 +35,13 @@ class ParkingLot:
         current_time = time.time()
         current_date = datetime.fromtimestamp(current_time).strftime('%Y%m%d')
         self.cnt += 1
-
         ticket = int(current_date) * 1000 + self.cnt
-
         if self.is_full(vehicle.get_type()):
             return 'Parking full!'
-
         if account_type == AccountStatus.SUBSCRIBED:
             ticket = self.cnt
         else:
             ticket = int(current_date) * 1000 + self.cnt
-
         vehicle.assign_ticket(ticket)
         self._increment_spot_count(vehicle.get_type())
         self.active_tickets[ticket] = vehicle
@@ -123,19 +119,16 @@ class ParkingLot:
         else:
             message += "Compact is full"
         message += "\n"
-
         if self.max_large_count - self.large_spot_count > 0:
             message += f"Free Large: {self.max_large_count - self.large_spot_count}"
         else:
             message += "Large is full"
         message += "\n"
-
         if self.max_motorbike_count - self.motorbike_spot_count > 0:
             message += f"Free Motorbike: {self.max_motorbike_count - self.motorbike_spot_count}"
         else:
             message += "Motorbike is full"
         message += "\n"
-
         if self.max_handicapped_count - self.handicapped_spot_count > 0:
             message += f"Free Handicapped: {self.max_handicapped_count - self.handicapped_spot_count}"
         else:
