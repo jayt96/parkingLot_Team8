@@ -7,7 +7,6 @@ class Payment:
     @staticmethod
     def make_payment(amount, account):
         print(f"Charge amount: {amount}")
-
         while True:
             try:
                 payment_input = float(input("Enter the payment amount: "))
