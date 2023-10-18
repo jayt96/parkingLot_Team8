@@ -19,7 +19,6 @@ class ParkingLot:
         self.max_handicapped_count = enums.HANDICAPPED_COUNT
         self.cnt = 0
         self.floor_count = 0
-
         self.active_tickets = {}
         self.parking_history = {}
 
